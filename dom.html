@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Selectors</title>
+</head>
+
+<body>
+
+    <h1 id="title">DOM Selectors</h1>
+
+    <p class="text">Hello World</p>
+    <p class="text">JavaScript</p>
+    <p class="text">DOM</p>
+
+    <div>
+        <p>Paragraph inside div</p>
+    </div>
+
+    <button id="btn">Click Me</button>
+
+    <script>
+
+        // ==========================================
+        // 1. getElementById()
+        // ==========================================
+
+        const title = document.getElementById("title");
+
+        console.log("getElementById:");
+        console.log(title);
+
+
+        // ==========================================
+        // 2. getElementsByClassName()
+        // ==========================================
+
+        const texts = document.getElementsByClassName("text");
+
+        console.log("getElementsByClassName:");
+        console.log(texts);
+
+        // Access individual elements
+        console.log(texts[0]);
+        console.log(texts[1]);
+
+
+        // ==========================================
+        // 3. getElementsByTagName()
+        // ==========================================
+
+        const paragraphs = document.getElementsByTagName("p");
+
+        console.log("getElementsByTagName:");
+        console.log(paragraphs);
+
+
+        // ==========================================
+        // 4. querySelector()
+        // ==========================================
+
+        // Select by ID
+        const title2 = document.querySelector("#title");
+
+        console.log("querySelector - ID:");
+        console.log(title2);
+
+
+        // Select by class
+        const firstText = document.querySelector(".text");
+
+        console.log("querySelector - Class:");
+        console.log(firstText);
+
+
+        // Select by tag
+        const firstParagraph = document.querySelector("p");
+
+        console.log("querySelector - Tag:");
+        console.log(firstParagraph);
+
+
+        // Select paragraph inside div
+        const divParagraph = document.querySelector("div p");
+
+        console.log("querySelector - Nested:");
+        console.log(divParagraph);
+
+
+        // ==========================================
+        // 5. querySelectorAll()
+        // ==========================================
+
+        const allTexts = document.querySelectorAll(".text");
+
+        console.log("querySelectorAll:");
+        console.log(allTexts);
+
+
+        // Loop through all elements
+        allTexts.forEach(function(element) {
+            console.log(element);
+        });
+
+
+        // ==========================================
+        // 6. Changing HTML using selectors
+        // ==========================================
+
+        title.textContent = "DOM Selector Example";
+
+
+        // Change first .text element
+        firstText.textContent = "Changed using JavaScript";
+
+
+        // Change all .text elements
+        allTexts.forEach(function(element) {
+            element.style.color = "blue";
+        });
+
+
+        // ==========================================
+        // 7. Button example
+        // ==========================================
+
+        const button = document.getElementById("btn");
+
+        button.addEventListener("click", function() {
+            alert("Button clicked!");
+        });
+
+    </script>
+
+</body>
+</html>
